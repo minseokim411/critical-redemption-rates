@@ -1,0 +1,7 @@
+ticker,regime,target_impact_T,full_spread_s
+AGG,normal,0.000996,0.000244
+AGG,stress,0.002271,0.000975
+HYG,normal,0.0142,0.01014
+HYG,stress,0.03926,0.0383
+LQD,normal,0.0075,0.00624
+LQD,stress,0.016,0.0259

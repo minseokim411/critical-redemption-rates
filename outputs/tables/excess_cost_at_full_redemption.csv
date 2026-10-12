@@ -1,0 +1,13 @@
+portfolio,method,regime,E_at_x100
+A_aggressive,waterfall,normal,0.04584183098013002
+A_aggressive,waterfall,stress,0.14322033524240227
+A_aggressive,pro_rata,normal,0.04584183098013002
+A_aggressive,pro_rata,stress,0.14322033524240227
+B_moderate,waterfall,normal,0.029464611525191337
+B_moderate,waterfall,stress,0.09624219036011365
+B_moderate,pro_rata,normal,0.029464611525191337
+B_moderate,pro_rata,stress,0.09624219036011365
+C_conservative,waterfall,normal,0.01630023008714523
+C_conservative,waterfall,stress,0.061307778972134706
+C_conservative,pro_rata,normal,0.01630023008714523
+C_conservative,pro_rata,stress,0.061307778972134706
