@@ -367,7 +367,6 @@ critical-redemption-rates/
 │   ├── make_summary.py           # -> outputs/results_summary.md (+ README results block)
 │   └── fetch_data.py             # optional: rebuild the ETF metrics from Yahoo Finance
 ├── data/
-│   ├── README.md                 # provenance and column definitions
 │   ├── liquidity_metrics_normal.csv
 │   └── liquidity_metrics_stress_2020.csv
 ├── outputs/
@@ -375,7 +374,7 @@ critical-redemption-rates/
 │   ├── figures/
 │   └── results_summary.md
 ├── docs/
-│   └── presentation/             # slide deck (PDF)
+│   └── CHANGELOG.md              # methodology changes and corrections
 └── tests/test_model.py           # reference values, invariants, README sync
 ```
 
@@ -400,7 +399,18 @@ The shipped data snapshot reproduces every published number exactly. `scripts/fe
 
 ## 7. Data
 
-`data/` contains only **derived** 20-day rolling measures (dollar ADV, annualised volatility, and a Corwin–Schultz spread estimate kept for reference only) for AGG, LQD and HYG. Raw prices are not included. See `data/README.md`.
+`data/` contains only **derived** daily measures for AGG, LQD and HYG, computed from Yahoo Finance data downloaded on 2026-10-03. Raw prices are not included.
+
+| File | Window | Trading days |
+|---|---|---|
+| `liquidity_metrics_normal.csv` | 2023-01-03 to 2026-09-30 | 939 |
+| `liquidity_metrics_stress_2020.csv` | 2020-02-03 to 2020-04-30 | 62 |
+
+| Column | Definition | Used by the model? |
+|---|---|---|
+| `ADV_20d_usd` | 20-day mean of close × volume (USD) | g calibration (cancels) and Monte Carlo range |
+| `Volatility_ann` | 20-day std of daily returns × √252 | g calibration (cancels) and Monte Carlo range |
+| `CS_Spread_est_REFERENCE_ONLY` | Corwin–Schultz (2012) spread of the ETF wrapper | No, diagnostic only |
 
 ## 8. References
 
